@@ -23,6 +23,7 @@ export const useLogout = () => {
       }
       setIsPending(false);
       setError(null);
+      Navigate("/login"); // 로그아웃하면 로그인 페이지로 가도록 네비게이션 설정
     } catch (err) {
       console.log(err.message);
       setError(err.message);
