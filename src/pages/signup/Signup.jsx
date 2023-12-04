@@ -22,7 +22,7 @@ const Signup = () => {
           value={email}
         />
       </label>
-      {/* 패스워드 라벨과 입력창도 완성한다! */}
+      {/* 패스워드 라벨과 입력창 */}
       <label>
         <span>Password:</span>
         <input
@@ -31,7 +31,7 @@ const Signup = () => {
           value={passowrd}
         />
       </label>
-
+      {/* name 라벨과 입력창 type은 text */}
       <label>
         <span>Name:</span>
         <input
