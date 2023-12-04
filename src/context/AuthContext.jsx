@@ -6,7 +6,8 @@ export const AuthContext = createContext();
 // Reducer 메소드
 export const authReducer = (state, action) => {
   switch (action.type) {
-    case "":
+    case "LOGIN":
+      return { ...state, user: action.payload };
     default:
       return state;
   }
