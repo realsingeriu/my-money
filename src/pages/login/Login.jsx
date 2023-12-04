@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.css";
 
 export default function Login() {
@@ -27,7 +27,7 @@ export default function Login() {
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          value={passowrd}
         />
       </label>
       <button className="btn">로그인</button>
