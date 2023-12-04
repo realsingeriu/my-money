@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
+import { useLogin } from "../../hooks/useLogin";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [passowrd, setPassword] = useState("");
+  const { login, error, isPending } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, passowrd);
+    login(email, passowrd);
   };
 
   return (
@@ -30,7 +32,14 @@ export default function Login() {
           value={passowrd}
         />
       </label>
-      <button className="btn">로그인</button>
+      {/* 비동기 작업시 isPending의 값으로 로딩중 버튼 표시하기 및 에러시 에러메세지 */}
+      {!isPending && <button className="btn">로그인</button>}
+      {isPending && (
+        <button className="btn" disabled>
+          로딩중...
+        </button>
+      )}
+      {error && <p>{error}</p>}
     </form>
   );
 }
