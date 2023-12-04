@@ -11,6 +11,7 @@ export const authReducer = (state, action) => {
       return { ...state, user: action.payload };
     case "LOGOUT":
       return { ...state, user: null };
+    // authIsReady로 파이어 베이스에 인증된 상태면 새로고침해도 인증유지
     case "AUTH_IS_READY":
       return { ...state, user: action.payload, authIsReady: true };
     default:
