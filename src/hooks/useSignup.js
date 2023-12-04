@@ -5,7 +5,7 @@ import { useAuthContext } from "./useAuthContext";
 export const useSignup = () => {
   const [error, setError] = useState();
   const [isPending, setIsPending] = useState(false);
-  const { dispath } = useAuthContext();
+  const { dispatch } = useAuthContext();
 
   const signup = async (email, password, displayName) => {
     setError(null);
@@ -26,7 +26,7 @@ export const useSignup = () => {
       await res.user.updateProfile({ displayName: displayName });
 
       // 유저 정보를 state에 저장한다.
-      dispath({ type: "LOGIN", disload: res.user });
+      dispatch({ type: "LOGIN", payload: res.user });
 
       setError(null);
       setIsPending(false);
