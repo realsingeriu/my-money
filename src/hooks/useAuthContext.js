@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
+// 인증 컨텍스트를 사용하기 위한 훅 (반복 사용시 필요)
 export const useAuthContext = () => {
   const context = useContext(AuthContext);
 
