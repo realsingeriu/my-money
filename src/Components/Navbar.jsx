@@ -4,6 +4,8 @@ import styles from "./Navbar.module.css";
 import { useLogout } from "../hooks/useLogout";
 
 export default function Navbar() {
+  // useLogout 훅 호출 및 logout 함수 추출
+  const { logout } = useLogout();
   return (
     <nav className={styles.navbar}>
       <ul>
@@ -16,7 +18,7 @@ export default function Navbar() {
           <Link to="/signup">가입하기</Link>
         </li>
         <li>
-          <button className="btn" onClick={useLogout}>
+          <button className="btn" onClick={logout}>
             로그아웃
           </button>
         </li>
