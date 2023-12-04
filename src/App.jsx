@@ -6,16 +6,20 @@ import Navbar from "./Components/Navbar";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
-  const { authIsReady } = useAuthContext();
+  const { authIsReady, user } = useAuthContext();
   return (
     <div className="App">
       {authIsReady && (
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            {/* 네비게이션 가드 : 인증된 유저와 안된유저에 따라서 페이지 요청시 막기 */}
+            <Route
+              path="/"
+              element={user ? <Home /> : <navigate to="/login" />}
+            />
+            <Route path="/login" element={!user ? <Login /> : <Home />} />
+            <Route path="/signup" element={!user ? <Signup /> : <Home />} />
           </Routes>
         </BrowserRouter>
       )}
