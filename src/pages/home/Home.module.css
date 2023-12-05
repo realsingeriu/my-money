@@ -91,3 +91,23 @@
   font-size: 0.9em;
   cursor: pointer;
 }
+/* 정렬 옵션 */
+
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 3;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Add new styles for the select option */
+.select-container {
+  margin-bottom: 10px;
+}
