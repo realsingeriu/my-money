@@ -20,7 +20,7 @@ export default function Home() {
       case "latest":
         return transactions.sort((a, b) => b.timestamp - a.timestamp);
       case "cost":
-        return transactions.sort((a, b) => a.amount - b.amount);
+        return transactions.sort((a, b) => b.amount - a.amount);
       case "alphabetical":
         return transactions.sort((a, b) => a.name.localeCompare(b.name));
       default:
