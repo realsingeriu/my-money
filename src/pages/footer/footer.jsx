@@ -21,7 +21,13 @@ const Footer = () => {
         <div className={styles.contact}>
           <h4>문의사항</h4>
           <p>Email: realsingeriu12@naver.com</p>
-          <link> www.github.com/realsingeriu/my-money</link>
+          <a
+            href="https://www.github.com/realsingeriu/my-money"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
           <p>전화번호: 123-456-7890</p>
         </div>
       </div>
