@@ -30,7 +30,7 @@ export const useCollection = (collection, query) => {
     );
 
     return () => unsub();
-  }, [collection]);
+  }, []);
 
   return { documents, error };
 };
