@@ -18,7 +18,7 @@ export default function Home() {
   const sortTransactions = (transactions, order) => {
     switch (order) {
       case "latest":
-        return transactions.sort((a, b) => a.timestamp - b.timestamp);
+        return transactions.sort((a, b) => b.timestamp - a.timestamp);
       case "cost":
         return transactions.sort((a, b) => b.amount - a.amount);
       case "alphabetical":
